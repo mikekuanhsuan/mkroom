@@ -1,6 +1,3 @@
-PORT=3001
+require('dotenv').config();
 
-DB_HOST=localhost
-DB_USER=root
-DB_PASS=Aa99405Mike012@
-DB_NAME=proj57
+console.log(process.env.DB_USER);
