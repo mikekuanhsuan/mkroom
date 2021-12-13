@@ -1,14 +1,21 @@
+class Person {
+    constructor(name='noname', age=0) {
+        this.name = name;
+        this.age = age;
+    }
 
-const person2 = require(__dirname + '/person2');
+    toJSON() {
+        return {
+            name: this.name,
+            age: this.age,
+        };
+    }
+    toString(){
+        return JSON.stringify(this.toJSON());
+    }
+}
 
-const p1 = new person2.Person('bill', 22);
-const p3 = new person2.Person;
+const f1 = a =>a*a;
+console.log(f1(6));
 
-
-
-console.log( p1.toJSON() );
-console.log( '' + p1 );
-console.log( person2.f1(8) );
-
-console.log( p3.toJSON() );
-
+module.exports = {Person, f1 };
