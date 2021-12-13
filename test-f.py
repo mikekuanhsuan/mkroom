@@ -1,21 +1,11 @@
-class Person {
-    constructor(name='noname', age=0) {
-        this.name = name;
-        this.age = age;
-    }
+const http = require('http');
 
-    toJSON() {
-        return {
-            name: this.name,
-            age: this.age,
-        };
-    }
-    toString(){
-        return JSON.stringify(this.toJSON());
-    }
-}
+const server = http.createServer((req, res)=>{
+    res.writeHead(200, {
+        'Content-Type': 'text/html'
+    }).end(`
+        <h2>${ req.url }</h2>
+    `);
+});
 
-const f1 = a =>a*a;
-console.log(f1(6));
-
-module.exports = {Person, f1 };
+server.listen(3000);
