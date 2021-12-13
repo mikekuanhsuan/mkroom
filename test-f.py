@@ -1,13 +1,21 @@
-URL, URI
+const http = require('http');
+const fs = require('fs');
 
-http://localhost:3000/dfadfladjsnfkasdmjflkdgnklasgnj
+const server = http.createServer((req, res)=>{
+    console.log('---a');
+    fs.writeFile(
+        __dirname + '/headers01.txt',
+        JSON.stringify(req.headers),
+        (error)=>{
+            if(!error){
+                console.log('---b');
+                res.end('ok');
+            } else {
+                console.log('---c');
+                res.end(error);
+            }
+        });
+    console.log('---d');
+});
 
- 
-
- 協定 protocol           ## http
- 主機 (domain, ip)  
- 通訊埠 port             ## 3000 
- 資源路經 path
-
- query string
- hash
+server.listen(3000);
