@@ -1,11 +1,13 @@
-const http = require('http');
+URL, URI
 
-const server = http.createServer((req, res)=>{
-    res.writeHead(200, {
-        'Content-Type': 'text/html'
-    }).end(`
-        <h2>${ req.url }</h2>
-    `);
-});
+http://localhost:3000/dfadfladjsnfkasdmjflkdgnklasgnj
 
-server.listen(3000);
+ 
+
+ 協定 protocol           ## http
+ 主機 (domain, ip)  
+ 通訊埠 port             ## 3000 
+ 資源路經 path
+
+ query string
+ hash
