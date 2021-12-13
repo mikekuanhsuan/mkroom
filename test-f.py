@@ -1,4 +1,3 @@
-#!/usr/bin/python3
-import sys
+const f1 = a =>a*a;
 
-print(sys.path)
+console.log(f1(7));
